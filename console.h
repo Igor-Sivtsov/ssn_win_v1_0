@@ -14,27 +14,27 @@ class console
 public:
     console(int cp)
     {
-        oldin =  GetConsoleCP();
-        oldout = GetConsoleOutputCP();
+        this->oldin =  GetConsoleCP();
+        this->oldout = GetConsoleOutputCP();
 
         SetConsoleCP(cp);
         SetConsoleOutputCP(cp);
 
-        hConsoleOutput = GetStdHandle(STD_OUTPUT_HANDLE);
-        GetConsoleScreenBufferInfo(hConsoleOutput, &csb);
+        this->hConsoleOutput = GetStdHandle(STD_OUTPUT_HANDLE);
+        GetConsoleScreenBufferInfo(this->hConsoleOutput, &this->csb);
     }
 
     ~console()
     {
-        SetConsoleTextAttribute(hConsoleOutput, csb.wAttributes);
+        SetConsoleTextAttribute(this->hConsoleOutput, this->csb.wAttributes);
 
-        SetConsoleCP(oldin);
-        SetConsoleOutputCP(oldout);
+        SetConsoleCP(this->oldin);
+        SetConsoleOutputCP(this->oldout);
     }
 
     HANDLE output()
     {
-        return hConsoleOutput;
+        return this->hConsoleOutput;
     }
 };
 
