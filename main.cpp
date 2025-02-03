@@ -9,7 +9,7 @@
 #define SN_LEN      29
 
 char                sn[SN_LEN] =    {0,};
-const unsigned int  sn_addr    =    0x1fc00;
+const unsigned int  sn_addr    =    0xfc00;
 
 const std::string   file_name  =    "Converter_USB-RS485_v1_m1.bin";
 
